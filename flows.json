@@ -28,8 +28,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 460,
-        "y": 360,
+        "x": 340,
+        "y": 340,
         "wires": [
             [
                 "ae540cc32c88fa5e",
@@ -71,8 +71,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 640,
-        "y": 380,
+        "x": 720,
+        "y": 320,
         "wires": [
             []
         ]
@@ -89,10 +89,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 640,
-        "y": 520,
+        "x": 700,
+        "y": 420,
         "wires": [
-            []
+            [
+                "fa2ca4a45c33e550"
+            ]
         ]
     },
     {
@@ -134,8 +136,26 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 380,
+        "x": 1120,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa2ca4a45c33e550",
+        "type": "function",
+        "z": "cb0d178b22d1f056",
+        "name": "function 5",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 580,
         "wires": [
             []
         ]
