@@ -1,1 +1,121 @@
-[]
+[
+    {
+        "id": "cb0d178b22d1f056",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ebe2c6f68bdb3a6d",
+        "type": "inject",
+        "z": "cb0d178b22d1f056",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "ae540cc32c88fa5e",
+                "9e3f9c9cc376cf46",
+                "cf18803febcfb939",
+                "b7da0585ddddcf96"
+            ]
+        ]
+    },
+    {
+        "id": "ae540cc32c88fa5e",
+        "type": "function",
+        "z": "cb0d178b22d1f056",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e3f9c9cc376cf46",
+        "type": "function",
+        "z": "cb0d178b22d1f056",
+        "name": "function 2",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf18803febcfb939",
+        "type": "function",
+        "z": "cb0d178b22d1f056",
+        "name": "function 3",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b7da0585ddddcf96",
+        "type": "change",
+        "z": "cb0d178b22d1f056",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    }
+]
