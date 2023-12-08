@@ -305,6 +305,26 @@
         "x": 1390,
         "y": 360,
         "wires": [
+            [
+                "6f2ac1ac76804248"
+            ]
+        ]
+    },
+    {
+        "id": "6f2ac1ac76804248",
+        "type": "rbe",
+        "z": "cb0d178b22d1f056",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1610,
+        "y": 340,
+        "wires": [
             []
         ]
     }
