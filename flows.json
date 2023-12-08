@@ -51,10 +51,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 640,
-        "y": 240,
+        "x": 620,
+        "y": 160,
         "wires": [
-            []
+            [
+                "9b8050eeb28906d4"
+            ]
         ]
     },
     {
@@ -112,8 +114,28 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 660,
+        "x": 600,
+        "y": 680,
+        "wires": [
+            [
+                "9b8050eeb28906d4"
+            ]
+        ]
+    },
+    {
+        "id": "9b8050eeb28906d4",
+        "type": "function",
+        "z": "cb0d178b22d1f056",
+        "name": "function 4",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 380,
         "wires": [
             []
         ]
