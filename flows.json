@@ -28,8 +28,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 340,
-        "y": 340,
+        "x": 120,
+        "y": 300,
         "wires": [
             [
                 "ae540cc32c88fa5e",
@@ -51,8 +51,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 620,
-        "y": 160,
+        "x": 400,
+        "y": 120,
         "wires": [
             [
                 "9b8050eeb28906d4",
@@ -72,8 +72,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 720,
-        "y": 320,
+        "x": 500,
+        "y": 280,
         "wires": [
             [
                 "ba72f42e33886743"
@@ -92,8 +92,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 420,
+        "x": 480,
+        "y": 380,
         "wires": [
             [
                 "fa2ca4a45c33e550",
@@ -120,8 +120,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
-        "y": 680,
+        "x": 380,
+        "y": 640,
         "wires": [
             [
                 "9b8050eeb28906d4"
@@ -140,11 +140,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1120,
-        "y": 340,
+        "x": 920,
+        "y": 220,
         "wires": [
             [
-                "761c383d0f5abcbc"
+                "761c383d0f5abcbc",
+                "21bd9dc1c2d00e04"
             ]
         ]
     },
@@ -160,11 +161,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1160,
-        "y": 580,
+        "x": 940,
+        "y": 540,
         "wires": [
             [
-                "662086e5fefce402"
+                "662086e5fefce402",
+                "f317b8cd55484089"
             ]
         ]
     },
@@ -180,8 +182,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 160,
+        "x": 740,
+        "y": 120,
         "wires": []
     },
     {
@@ -196,8 +198,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1240,
-        "y": 260,
+        "x": 1040,
+        "y": 320,
         "wires": []
     },
     {
@@ -212,8 +214,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
-        "y": 460,
+        "x": 1000,
+        "y": 420,
         "wires": []
     },
     {
@@ -228,8 +230,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 320,
+        "x": 660,
+        "y": 280,
         "wires": []
     },
     {
@@ -244,8 +246,66 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 420,
+        "x": 660,
+        "y": 380,
         "wires": []
+    },
+    {
+        "id": "f317b8cd55484089",
+        "type": "range",
+        "z": "cb0d178b22d1f056",
+        "minin": "",
+        "maxin": "",
+        "minout": "",
+        "maxout": "",
+        "action": "scale",
+        "round": false,
+        "property": "payload",
+        "name": "",
+        "x": 1210,
+        "y": 660,
+        "wires": [
+            [
+                "f2df228123c39f84"
+            ]
+        ]
+    },
+    {
+        "id": "21bd9dc1c2d00e04",
+        "type": "range",
+        "z": "cb0d178b22d1f056",
+        "minin": "",
+        "maxin": "",
+        "minout": "",
+        "maxout": "",
+        "action": "scale",
+        "round": false,
+        "property": "payload",
+        "name": "",
+        "x": 1230,
+        "y": 120,
+        "wires": [
+            [
+                "f2df228123c39f84"
+            ]
+        ]
+    },
+    {
+        "id": "f2df228123c39f84",
+        "type": "range",
+        "z": "cb0d178b22d1f056",
+        "minin": "",
+        "maxin": "",
+        "minout": "",
+        "maxout": "",
+        "action": "scale",
+        "round": false,
+        "property": "payload",
+        "name": "",
+        "x": 1390,
+        "y": 360,
+        "wires": [
+            []
+        ]
     }
 ]
