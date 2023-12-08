@@ -10802,7 +10802,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1190,
+        "x": 1210,
         "y": 260,
         "wires": []
     },
@@ -10888,7 +10888,7 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 1170,
+        "x": 1190,
         "y": 300,
         "wires": [
             []
