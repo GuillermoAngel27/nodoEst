@@ -10414,8 +10414,9 @@
         "beserver": "client",
         "base64": false,
         "end": false,
-        "x": 720,
-        "y": 320,
+        "tls": "",
+        "x": 740,
+        "y": 280,
         "wires": []
     },
     {
@@ -10430,8 +10431,8 @@
         "topic": "",
         "payload": "[\"0xA0\",\"0x01\",\"0x01\",\"0xA2\"]",
         "payloadType": "bin",
-        "x": 130,
-        "y": 340,
+        "x": 150,
+        "y": 300,
         "wires": [
             [
                 "360e2d35.417162"
@@ -10450,8 +10451,8 @@
         "topic": "",
         "payload": " [\"0xA0\",\"0x01\",\"0x00\",\"0xA1\"]",
         "payloadType": "bin",
-        "x": 130,
-        "y": 300,
+        "x": 150,
+        "y": 260,
         "wires": [
             [
                 "360e2d35.417162"
@@ -10470,8 +10471,8 @@
         "topic": "",
         "payload": "[\"0xA0\",\"0x02\",\"0x01\",\"0xA3\"]",
         "payloadType": "bin",
-        "x": 110,
-        "y": 480,
+        "x": 150,
+        "y": 400,
         "wires": [
             [
                 "360e2d35.417162"
@@ -10490,8 +10491,8 @@
         "topic": "",
         "payload": "[\"0xA0\",\"0x02\",\"0x00\",\"0xA2\"]",
         "payloadType": "bin",
-        "x": 110,
-        "y": 440,
+        "x": 150,
+        "y": 360,
         "wires": [
             [
                 "360e2d35.417162"
@@ -10510,8 +10511,8 @@
         "topic": "",
         "payload": " [\"0xA0\",\"0x03\",\"0x01\",\"0xA4\"]",
         "payloadType": "bin",
-        "x": 310,
-        "y": 540,
+        "x": 330,
+        "y": 500,
         "wires": [
             [
                 "360e2d35.417162"
@@ -10530,8 +10531,8 @@
         "topic": "",
         "payload": "[\"0xA0\",\"0x03\",\"0x00\",\"0xA3\"]",
         "payloadType": "bin",
-        "x": 310,
-        "y": 500,
+        "x": 330,
+        "y": 460,
         "wires": [
             [
                 "360e2d35.417162"
@@ -10550,8 +10551,8 @@
         "topic": "",
         "payload": "[\"0xA0\",\"0x04\",\"0x01\",\"0xA5\"]",
         "payloadType": "bin",
-        "x": 650,
-        "y": 540,
+        "x": 670,
+        "y": 500,
         "wires": [
             [
                 "360e2d35.417162"
@@ -10570,8 +10571,8 @@
         "topic": "",
         "payload": " [\"0xA0\",\"0x04\",\"0x00\",\"0xA4\"]",
         "payloadType": "bin",
-        "x": 650,
-        "y": 500,
+        "x": 670,
+        "y": 460,
         "wires": [
             [
                 "360e2d35.417162"
@@ -10592,6 +10593,7 @@
         "passthru": true,
         "decouple": "false",
         "topic": "",
+        "topicType": "str",
         "style": "",
         "onvalue": "[\"0xA0\",\"0x01\",\"0x01\",\"0xA2\"]",
         "onvalueType": "bin",
@@ -10601,7 +10603,9 @@
         "offvalueType": "bin",
         "officon": "",
         "offcolor": "",
-        "x": 400,
+        "animate": true,
+        "className": "",
+        "x": 300,
         "y": 80,
         "wires": [
             [
@@ -10632,8 +10636,8 @@
         "offvalueType": "bin",
         "officon": "",
         "offcolor": "",
-        "x": 400,
-        "y": 140,
+        "x": 300,
+        "y": 120,
         "wires": [
             [
                 "360e2d35.417162"
@@ -10663,8 +10667,8 @@
         "offvalueType": "bin",
         "officon": "",
         "offcolor": "",
-        "x": 400,
-        "y": 200,
+        "x": 300,
+        "y": 160,
         "wires": [
             [
                 "360e2d35.417162"
@@ -10694,8 +10698,8 @@
         "offvalueType": "bin",
         "officon": "",
         "offcolor": "",
-        "x": 400,
-        "y": 260,
+        "x": 300,
+        "y": 200,
         "wires": [
             [
                 "360e2d35.417162"
