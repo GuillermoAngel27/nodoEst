@@ -87,6 +87,13 @@
         "env": []
     },
     {
+        "id": "55ba811a.d1969",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "0cd476c06e8fa6b2",
         "type": "subflow",
         "name": "subCnnBD",
@@ -497,6 +504,25 @@
         "width": "6",
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "481533c8.0110ec",
+        "type": "ui_group",
+        "name": "ESP8266 Relay Control x4",
+        "tab": "3695a7e.2f63558",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3695a7e.2f63558",
+        "type": "ui_tab",
+        "name": "Principal",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "6800462c10826a9c",
@@ -8759,7 +8785,7 @@
         "finalize": "",
         "libs": [],
         "x": 180,
-        "y": 1040,
+        "y": 760,
         "wires": [
             []
         ]
@@ -10379,167 +10405,301 @@
         ]
     },
     {
-        "id": "27d53d87a29a25be",
-        "type": "subflow:f03057dae7955163",
-        "z": "aed7fdab8a3bd4f2",
+        "id": "360e2d35.417162",
+        "type": "tcp out",
+        "z": "55ba811a.d1969",
         "name": "",
-        "x": 360,
-        "y": 360,
-        "wires": [
-            [
-                "734473bd87ab1bb7"
-            ]
-        ]
+        "host": "192.168.4.1",
+        "port": "8080",
+        "beserver": "client",
+        "base64": false,
+        "end": false,
+        "x": 720,
+        "y": 320,
+        "wires": []
     },
     {
-        "id": "40a456cddf4cc567",
+        "id": "3ae9a13a.1f7b1e",
         "type": "inject",
-        "z": "aed7fdab8a3bd4f2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
+        "z": "55ba811a.d1969",
+        "name": "ON RELE 1",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "734473bd87ab1bb7",
-        "type": "function",
-        "z": "aed7fdab8a3bd4f2",
-        "name": "function 39",
-        "func": "var srcNumEst = global.get(\"gblNumEst\");\n\nif (srcNumEst !== undefined) {\n    msg.verdadero = true;\n} else {\n    msg.verdadero = false;\n}\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 590,
-        "y": 360,
+        "payload": "[\"0xA0\",\"0x01\",\"0x01\",\"0xA2\"]",
+        "payloadType": "bin",
+        "x": 130,
+        "y": 340,
         "wires": [
             [
-                "562eacabb68594a5"
+                "360e2d35.417162"
             ]
         ]
     },
     {
-        "id": "e86a3c403199b552",
-        "type": "debug",
-        "z": "aed7fdab8a3bd4f2",
-        "name": "debug respuesta",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "respuesta",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1210,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "562eacabb68594a5",
-        "type": "switch",
-        "z": "aed7fdab8a3bd4f2",
-        "name": "",
-        "property": "verdadero",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 750,
-        "y": 360,
-        "wires": [
-            [
-                "4dfe8813eb3b2082"
-            ],
-            [
-                "548804e841ddc6ef"
-            ]
-        ]
-    },
-    {
-        "id": "4dfe8813eb3b2082",
-        "type": "function",
-        "z": "aed7fdab8a3bd4f2",
-        "name": "function 40",
-        "func": "if (msg.verdadero = true){\n    msg.respuesta = 'Ejecutar Guardado';\n}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 970,
-        "y": 260,
-        "wires": [
-            [
-                "e86a3c403199b552"
-            ]
-        ]
-    },
-    {
-        "id": "548804e841ddc6ef",
-        "type": "function",
-        "z": "aed7fdab8a3bd4f2",
-        "name": "function 41",
-        "func": "if(msg.verdadero == true){\n    msg.topic = 'Notificación Estacionamiento';\n    msg.payload = 'No hay Lugar Disponible en el Estacionamiento, Volver mas Tarde';\n}\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 970,
-        "y": 300,
-        "wires": [
-            [
-                "37b531f1ebf514ba"
-            ]
-        ]
-    },
-    {
-        "id": "37b531f1ebf514ba",
-        "type": "ui_toast",
-        "z": "aed7fdab8a3bd4f2",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
+        "id": "426470a3.8d8b7",
+        "type": "inject",
+        "z": "55ba811a.d1969",
+        "name": "OFF RELE 1",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
         "topic": "",
-        "name": "",
-        "x": 1190,
+        "payload": " [\"0xA0\",\"0x01\",\"0x00\",\"0xA1\"]",
+        "payloadType": "bin",
+        "x": 130,
         "y": 300,
         "wires": [
-            []
+            [
+                "360e2d35.417162"
+            ]
+        ]
+    },
+    {
+        "id": "3c6cebe3.f50544",
+        "type": "inject",
+        "z": "55ba811a.d1969",
+        "name": "ON RELE 2",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"0xA0\",\"0x02\",\"0x01\",\"0xA3\"]",
+        "payloadType": "bin",
+        "x": 110,
+        "y": 480,
+        "wires": [
+            [
+                "360e2d35.417162"
+            ]
+        ]
+    },
+    {
+        "id": "369cb586.03adea",
+        "type": "inject",
+        "z": "55ba811a.d1969",
+        "name": "OFF RELE 2",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"0xA0\",\"0x02\",\"0x00\",\"0xA2\"]",
+        "payloadType": "bin",
+        "x": 110,
+        "y": 440,
+        "wires": [
+            [
+                "360e2d35.417162"
+            ]
+        ]
+    },
+    {
+        "id": "8b6f6941.41def8",
+        "type": "inject",
+        "z": "55ba811a.d1969",
+        "name": "ON RELE 3",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": " [\"0xA0\",\"0x03\",\"0x01\",\"0xA4\"]",
+        "payloadType": "bin",
+        "x": 310,
+        "y": 540,
+        "wires": [
+            [
+                "360e2d35.417162"
+            ]
+        ]
+    },
+    {
+        "id": "5d0efad6.a98434",
+        "type": "inject",
+        "z": "55ba811a.d1969",
+        "name": "OFF RELE 3",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"0xA0\",\"0x03\",\"0x00\",\"0xA3\"]",
+        "payloadType": "bin",
+        "x": 310,
+        "y": 500,
+        "wires": [
+            [
+                "360e2d35.417162"
+            ]
+        ]
+    },
+    {
+        "id": "31d1b508.c7075a",
+        "type": "inject",
+        "z": "55ba811a.d1969",
+        "name": "ON RELE 4",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"0xA0\",\"0x04\",\"0x01\",\"0xA5\"]",
+        "payloadType": "bin",
+        "x": 650,
+        "y": 540,
+        "wires": [
+            [
+                "360e2d35.417162"
+            ]
+        ]
+    },
+    {
+        "id": "33bc1ff2.3d252",
+        "type": "inject",
+        "z": "55ba811a.d1969",
+        "name": "OFF RELE 4",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": " [\"0xA0\",\"0x04\",\"0x00\",\"0xA4\"]",
+        "payloadType": "bin",
+        "x": 650,
+        "y": 500,
+        "wires": [
+            [
+                "360e2d35.417162"
+            ]
+        ]
+    },
+    {
+        "id": "cb9f4579.c424b8",
+        "type": "ui_switch",
+        "z": "55ba811a.d1969",
+        "name": "",
+        "label": "RELE 01",
+        "tooltip": "",
+        "group": "481533c8.0110ec",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "[\"0xA0\",\"0x01\",\"0x01\",\"0xA2\"]",
+        "onvalueType": "bin",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "[\"0xA0\",\"0x01\",\"0x00\",\"0xA1\"]",
+        "offvalueType": "bin",
+        "officon": "",
+        "offcolor": "",
+        "x": 400,
+        "y": 80,
+        "wires": [
+            [
+                "360e2d35.417162"
+            ]
+        ]
+    },
+    {
+        "id": "600ec857.15b108",
+        "type": "ui_switch",
+        "z": "55ba811a.d1969",
+        "name": "",
+        "label": "RELE 02",
+        "tooltip": "",
+        "group": "481533c8.0110ec",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "[\"0xA0\",\"0x02\",\"0x01\",\"0xA3\"]",
+        "onvalueType": "bin",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "[\"0xA0\",\"0x02\",\"0x00\",\"0xA2\"]",
+        "offvalueType": "bin",
+        "officon": "",
+        "offcolor": "",
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "360e2d35.417162"
+            ]
+        ]
+    },
+    {
+        "id": "70e71b09.e116a4",
+        "type": "ui_switch",
+        "z": "55ba811a.d1969",
+        "name": "",
+        "label": "RELE 03",
+        "tooltip": "",
+        "group": "481533c8.0110ec",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": " [\"0xA0\",\"0x03\",\"0x01\",\"0xA4\"]",
+        "onvalueType": "bin",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "  [\"0xA0\",\"0x03\",\"0x00\",\"0xA3\"]",
+        "offvalueType": "bin",
+        "officon": "",
+        "offcolor": "",
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "360e2d35.417162"
+            ]
+        ]
+    },
+    {
+        "id": "f8426c39.d0631",
+        "type": "ui_switch",
+        "z": "55ba811a.d1969",
+        "name": "",
+        "label": "RELE 04",
+        "tooltip": "",
+        "group": "481533c8.0110ec",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "[\"0xA0\",\"0x04\",\"0x01\",\"0xA5\"]",
+        "onvalueType": "bin",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "[\"0xA0\",\"0x04\",\"0x00\",\"0xA4\"]",
+        "offvalueType": "bin",
+        "officon": "",
+        "offcolor": "",
+        "x": 400,
+        "y": 260,
+        "wires": [
+            [
+                "360e2d35.417162"
+            ]
         ]
     }
 ]
